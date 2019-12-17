@@ -1,0 +1,88 @@
+
+m = 'gwox{RgqssihYspOntqpxs}'
+k = 'blorpy'
+gue = '1'
+[ord(m[i])-ord('flag'[i]) for i in range(4)]
+[ord(k[i]) - ord('a') for i in range(len(k))]
+mt = [c in m if c != '{' and c != '}']
+mt = [c for c in m if c != '{' and c != '}']
+In
+pt = ''
+for i in range(len(mt)):
+    pt += chr(ord(mt[i]) + ord(k[i%len(k)]))
+    
+pt
+mt
+pt = ''
+for i in range(len(mt)):
+    pt += chr(ord(mt[i]) - (ord(k[i%len(k)]) - ord('a')))
+    
+    
+pt
+mt
+
+    
+cipher = [ord(c)-ord('a') for c in mt]
+cipher
+mt
+cipher = [ord(c)-ord('a') for c in mt if c > 'a' else ord(c)-ord('A')]
+cipher = []
+for c in mt:
+    if c > 'a': l = 'a'
+    else: l = 'A'
+    cipher.append(ord(c)-ord(l))
+    
+cipher
+k
+k = []
+for c in k:
+    if c > 'a': l = 'a'
+    else: l = 'A'
+    key.append(ord(c)-ord(l))
+    
+k = "blorpy"
+key = []
+for c in k:
+    if c > 'a': l = 'a'
+    else: l = 'A'
+    key.append(ord(c)-ord(l))
+    
+key
+cipher
+plaintext = []
+for i in range(len(cipher)):
+    plaintext.append(cipher[i] - key[i%len(key)])
+    
+p = ''.join([chr(x) for x in plaintext])
+plaintext
+plaintext = []
+for i in range(len(cipher)):
+    plaintext.append((cipher[i] - key[i%len(key)])%26)
+    
+    
+p = ''.join([chr(x) for x in plaintext])
+p
+plaintext = []
+cipher = []
+for c in mt:
+    if c >= 'a': l = 'a'
+    else: l = 'A'
+    cipher.append(ord(c)-ord(l))
+    
+cipher
+key
+plaintext = []
+for i in range(len(cipher)):
+    plaintext.append((cipher[i] - key[i%len(key)])%26)
+    
+    
+p = ''.join([chr(ord('a')+x) for x in plaintext])
+p
+f = open('writeup.txt', 'w')
+for line in In:
+    f.writeline(line)
+    
+for line in In:
+    f.write(str(line)+'\n')
+    
+    

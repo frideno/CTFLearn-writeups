@@ -1,0 +1,64 @@
+undefined8 main(void)
+
+{
+  size_t sVar1;
+  long in_FS_OFFSET;
+  int i;
+  int j;
+  int local_cc;
+  int x [4];
+  undefined4 local_b0;
+  undefined4 local_ac;
+  undefined8 local_a8;
+  undefined8 local_a0;
+  undefined4 local_98;
+  undefined local_94;
+  byte y [32];
+  byte input [72];
+  long local_20;
+  
+  local_20 = *(long *)(in_FS_OFFSET + 0x28);
+  local_a8 = 0x4463457d4f625f68;
+  local_a0 = 0x28687529472b524f;
+  local_98 = 0x762c6c6a;
+  local_94 = 0x4c;
+  printf("[*] Hello! Welcome to our Program!\nEnter the password to contiune:  ");
+  __isoc99_scanf(&DAT_00100add, input);
+ 
+
+  x[0] = 0x10;
+  x[1] = 0x18;
+  x[2] = len/2;
+  x[3] = len;
+
+  local_b0 = 0;
+  sVar1 = len;
+  local_ac = (undefined4)(len/2);
+
+  for (i = 0; i < 2; i++) {
+    for (j = 0; j < x[i+2]) {
+      y[j] = input[j] ^ x[i];
+    }
+  }
+
+// 
+
+
+  local_cc = 0;
+  while( true ) {
+    sVar1 = strlen((char *)&local_a8);
+    if (sVar1 - 1 <= (ulong)(long)local_cc) break;
+    if (y[(long)local_cc] != *(byte *)((long)&local_a8 + (long)local_cc)) {
+      puts("[-] Wrong Password");
+                    /* WARNING: Subroutine does not return */
+      exit(0);
+    }
+    local_cc = local_cc + 1;
+  }
+  puts("[+] Successful Login");
+  if (local_20 != *(long *)(in_FS_OFFSET + 0x28)) {
+                    /* WARNING: Subroutine does not return */
+    __stack_chk_fail();
+  }
+  return 0;
+}
